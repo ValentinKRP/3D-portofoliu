@@ -8,6 +8,10 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 
 import css from "./tech/css.png";
+import bootstrap from "./tech/bootstrap.jpg";
+import php from "./tech/php.png";
+import flutter from "./tech/flutter.png";
+import laravel from "./tech/laravel.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
@@ -24,8 +28,11 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import p3 from "./company/p3png.png";
+import fii from "./company/fii.png";
 
 import carrent from "./carrent.png";
+import gitproject from "./gitproject.webp";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
@@ -53,8 +60,15 @@ export {
   meta,
   shopify,
   starbucks,
+  gitproject,
   tesla,
   carrent,
   jobit,
   tripguide,
+  bootstrap,
+  php,
+  laravel,
+  flutter,
+  p3,
+  fii,
 };
