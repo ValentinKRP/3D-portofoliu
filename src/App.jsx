@@ -7,7 +7,7 @@ import { About, Experience, Hero, Navbar, Tech, Works, StarsCanvas, EarthCanvas 
 
 const App = () => {
   return (
-    <HashRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className='relative z-0 bg-primary'>
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
@@ -28,7 +28,7 @@ const App = () => {
         <EarthCanvas />
       </motion.div>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
