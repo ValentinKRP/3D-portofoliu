@@ -145,8 +145,21 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
+    name: "FitNutrition",
+    description:
+      "My degree project, a fitness mobile app to track your calorie to help you achieve your objective.I used Flutter framework and work with a REST API  to search for specific food that user want to search and add to his daily journal.",
+    tags: [
+      {
+        name: "Flutter",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "REST API",
+        color: "green-text-gradient",
+      },
+    ],
     image: gitproject,
-    source_code_link: "https://github.com/ValentinKRP/my-shop",
+    source_code_link: "https://github.com/ValentinKRP/FitNutritionLicenta",
   },
   {
     name: "To Do List",
