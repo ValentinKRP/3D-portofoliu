@@ -145,6 +145,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
+    source_code_link: "https://github.com/ValentinKRP/my-shop",
+  },
+  {
     name: "FitNutrition",
     description:
       "My degree project, a fitness mobile app to track your calorie to help you achieve your objective.I used Flutter framework and work with a REST API  to search for specific food that user want to search and add to his daily journal.",
@@ -161,6 +164,7 @@ const projects = [
     image: gitproject,
     source_code_link: "https://github.com/ValentinKRP/FitNutritionLicenta",
   },
+
   {
     name: "To Do List",
     description: "A simple to do list app using React framework",
