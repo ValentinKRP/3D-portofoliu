@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { motion } from "framer-motion";
 import { slideIn } from "./utils/motion";
 
@@ -6,7 +7,7 @@ import { About, Experience, Hero, Navbar, Tech, Works, StarsCanvas, EarthCanvas 
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className='relative z-0 bg-primary'>
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
@@ -27,7 +28,7 @@ const App = () => {
         <EarthCanvas />
       </motion.div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
