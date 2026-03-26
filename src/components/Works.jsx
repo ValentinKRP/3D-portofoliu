@@ -5,7 +5,6 @@ import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
   index,
@@ -27,7 +26,12 @@ const ProjectCard = ({
   };
 
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.18, 0.75)} className='w-full'>
+    <motion.div
+      initial={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0 }}
+      className='w-full'
+    >
       <div className='w-full rounded-2xl border border-white/10 bg-[#0d1324] p-6 shadow-card md:p-8'>
         <div className='grid items-start gap-8 xl:grid-cols-[minmax(0,1fr)_430px]'>
           <div>
@@ -146,14 +150,20 @@ const ProjectCard = ({
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0 }}
+      >
         <p className={styles.sectionSubText}>Selected Work</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
 
       <div className='w-full flex'>
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0 }}
           className='mt-3 max-w-4xl text-[17px] leading-[30px] text-white/80'
         >
           A selection of projects across marketplace operations, seller workflows, inventory tooling,
