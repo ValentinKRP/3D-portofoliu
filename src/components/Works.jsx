@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { github } from "../assets";
@@ -26,12 +25,7 @@ const ProjectCard = ({
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 1, y: 0 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0 }}
-      className='w-full'
-    >
+    <div className='w-full'>
       <div className='w-full rounded-2xl border border-white/10 bg-[#0d1324] p-6 shadow-card md:p-8'>
         <div className='grid items-start gap-8 xl:grid-cols-[minmax(0,1fr)_430px]'>
           <div>
@@ -143,33 +137,24 @@ const ProjectCard = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const Works = () => {
   return (
     <>
-      <motion.div
-        initial={{ opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0 }}
-      >
+      <div>
         <p className={styles.sectionSubText}>Selected Work</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
-      </motion.div>
+      </div>
 
       <div className='w-full flex'>
-        <motion.p
-          initial={{ opacity: 1, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0 }}
-          className='mt-3 max-w-4xl text-[17px] leading-[30px] text-white/80'
-        >
+        <p className='mt-3 max-w-4xl text-[17px] leading-[30px] text-white/80'>
           A selection of projects across marketplace operations, seller workflows, inventory tooling,
           and personal product development. Each project is presented with screenshots, technical
           context, and feature highlights.
-        </motion.p>
+        </p>
       </div>
 
       <div className='mt-14 flex flex-col gap-7'>
