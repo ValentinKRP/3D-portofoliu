@@ -27,71 +27,69 @@ const ProjectCard = ({
   return (
     <div className='w-full'>
       <div className='w-full rounded-2xl border border-white/10 bg-[#0d1324] p-6 shadow-card md:p-8'>
-        <div className='grid items-start gap-8 xl:grid-cols-[minmax(0,1fr)_430px]'>
-          <div>
-            <h3 className='text-[28px] font-bold text-white'>{name}</h3>
-            <p className='mt-3 text-[15px] leading-[28px] text-white/80'>{description}</p>
+        <div>
+          <h3 className='text-[28px] font-bold text-white'>{name}</h3>
+          <p className='mt-3 text-[15px] leading-[28px] text-white/80'>{description}</p>
 
-            <div className='mt-6 grid gap-3 sm:grid-cols-3'>
-              <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
-                <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Role</p>
-                <p className='mt-2 text-[15px] leading-6 text-white'>{role}</p>
-              </div>
-              <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
-                <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Stack</p>
-                <p className='mt-2 text-[15px] leading-6 text-white'>{stack}</p>
-              </div>
-              <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
-                <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Use Case</p>
-                <p className='mt-2 text-[15px] leading-6 text-white'>{useCase}</p>
-              </div>
+          <div className='mt-6 grid gap-3 sm:grid-cols-3'>
+            <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
+              <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Role</p>
+              <p className='mt-2 text-[15px] leading-6 text-white'>{role}</p>
             </div>
-
-            <ul className='mt-6 space-y-3'>
-              {highlights.map((highlight, highlightIndex) => (
-                <li
-                  key={`${name}-highlight-${highlightIndex}`}
-                  className='flex gap-3 text-[15px] leading-[27px] text-white/80'
-                >
-                  <span className='mt-[10px] h-2 w-2 shrink-0 rounded-full bg-[#915EFF]' />
-                  <span>{highlight}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className='mt-6 flex flex-wrap gap-2'>
-              {tags.map((tag) => (
-                <p
-                  key={`${name}-${tag.name}`}
-                  className={`text-[14px] ${tag.color}`}
-                >
-                  #{tag.name}
-                </p>
-              ))}
+            <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
+              <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Stack</p>
+              <p className='mt-2 text-[15px] leading-6 text-white'>{stack}</p>
             </div>
-
-            {source_code_link ? (
-              <button
-                type='button'
-                onClick={() => window.open(source_code_link, "_blank")}
-                className='mt-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-black/30 px-5 py-3 text-[14px] font-medium text-white transition hover:border-[#915EFF] hover:bg-black/50'
-              >
-                <img
-                  src={github}
-                  alt='source code'
-                  className='h-4 w-4 object-contain'
-                />
-                View repository
-              </button>
-            ) : null}
+            <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
+              <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Use Case</p>
+              <p className='mt-2 text-[15px] leading-6 text-white'>{useCase}</p>
+            </div>
           </div>
 
-          <div>
+          <ul className='mt-6 space-y-3'>
+            {highlights.map((highlight, highlightIndex) => (
+              <li
+                key={`${name}-highlight-${highlightIndex}`}
+                className='flex gap-3 text-[15px] leading-[27px] text-white/80'
+              >
+                <span className='mt-[10px] h-2 w-2 shrink-0 rounded-full bg-[#915EFF]' />
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className='mt-6 flex flex-wrap gap-2'>
+            {tags.map((tag) => (
+              <p
+                key={`${name}-${tag.name}`}
+                className={`text-[14px] ${tag.color}`}
+              >
+                #{tag.name}
+              </p>
+            ))}
+          </div>
+
+          {source_code_link ? (
+            <button
+              type='button'
+              onClick={() => window.open(source_code_link, "_blank")}
+              className='mt-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-black/30 px-5 py-3 text-[14px] font-medium text-white transition hover:border-[#915EFF] hover:bg-black/50'
+            >
+              <img
+                src={github}
+                alt='source code'
+                className='h-4 w-4 object-contain'
+              />
+              View repository
+            </button>
+          ) : null}
+
+          <div className='mt-8'>
             <div className='relative overflow-hidden rounded-2xl border border-white/10 bg-black/30'>
               <img
                 src={images[activeIndex]}
                 alt={`${name} preview ${activeIndex + 1}`}
-                className='h-[300px] w-full bg-[#050816] object-contain'
+                className='h-[340px] w-full bg-[#050816] object-contain'
               />
 
               {hasGallery ? (
@@ -115,20 +113,20 @@ const ProjectCard = ({
             </div>
 
             {hasGallery ? (
-              <div className='mt-3 grid grid-cols-4 gap-2 sm:grid-cols-5'>
+              <div className='mt-3 flex gap-2 overflow-x-auto pb-2'>
                 {images.map((image, imageIndex) => (
                   <button
                     key={`${name}-thumb-${imageIndex}`}
                     type='button'
                     onClick={() => showSlide(imageIndex)}
-                    className={`overflow-hidden rounded-xl border ${
+                    className={`shrink-0 overflow-hidden rounded-xl border ${
                       imageIndex === activeIndex ? "border-[#915EFF]" : "border-white/10"
                     } bg-[#050816]`}
                   >
                     <img
                       src={image}
                       alt={`${name} thumbnail ${imageIndex + 1}`}
-                      className='h-16 w-full bg-[#050816] object-contain'
+                      className='h-20 w-28 bg-[#050816] object-contain'
                     />
                   </button>
                 ))}
