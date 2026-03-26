@@ -16,12 +16,12 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Valentin</span>
+            Carp <span className='text-[#915EFF]'>Valentin</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I finished faculty of Computer Science <br className='sm:block hidden' />
-            in Iasi,Roumania in 2019
-            and now work as a Web Developer.
+            Web developer building business-focused platforms
+            <br className='sm:block hidden' />
+            for marketplace operations, seller workflows, and internal tools.
           </p>
         </div>
       </div>
@@ -29,7 +29,7 @@ const Hero = () => {
       <ComputersCanvas />
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
-        <a href='#about'>
+        <a href='#projects'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
               animate={{

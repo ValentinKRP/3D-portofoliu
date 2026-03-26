@@ -1,280 +1,169 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  gitproject,
-  javascript,
-  typescript,
-  html,
-  bootstrap,
-  laravel,
-  flutter,
-  php,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-  fii,
-  p3,
-} from "../assets";
+import { gitproject } from "../assets";
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
+    id: "projects",
+    title: "Projects",
   },
 ];
 
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-];
-
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-
-  {
-    name: "Bootstrap",
-    icon: bootstrap,
-  },
-
-  {
-    name: "Flutter",
-    icon: flutter,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "php",
-    icon: php,
-  },
-  {
-    name: "laravel",
-    icon: laravel,
-  },
-];
-
-const experiences = [
-  {
-    title: "FII Student",
-    company_name: "FII",
-    icon: fii,
-    iconBg: "#383E56",
-    date: "October 2019 - July 2022",
-    points: [
-      "Learning diffrent concepts of computer science",
-      "Developing programming skills",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company_name: "P3 Hotel Software",
-    icon: p3,
-    iconBg: "#E6DEDD",
-    date: "Sept 2022 - Present",
-    points: [
-      "Developing and maintaining hotel booking engines for hotels using Laravel and other related technologies.",
-    ],
-  },
-];
+const services = [];
+const technologies = [];
+const experiences = [];
 
 const projects = [
   {
-    name: "Shop app",
-    description: "A simple shop app usign React framework",
-    tags: [
-      {
-        name: "html/css",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "react",
-        color: "green-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "pink-text-gradient",
-      },
+    name: "Nexus Platform",
+    description:
+      "Full-stack operations platform for catalog, warehouse, vehicle, order, return, and channel-management workflows.",
+    role: "Backend API, admin tooling, frontend dashboard",
+    stack: "Laravel 12, Next.js 16, React 19, MariaDB",
+    useCase: "Internal operations hub for marketplace teams",
+    highlights: [
+      "Built Laravel APIs, Filament admin resources, and a Next.js dashboard with localized routing for day-to-day operations work.",
+      "Delivered product, category, warehouse, vehicle, order, invoice, return, subscription, and feature-flag workflows in one platform.",
+      "Integrated marketplace channels such as OLX, eBay, Ovoko, and Pieseauto in a Dockerized multi-service environment.",
+      "Implemented session-aware authentication between the frontend and backend for admin and operations users.",
+      "Maintained supporting infrastructure including reverse proxy routing, HTTPS automation, PhpMyAdmin, Mailhog, and debug-friendly Docker services.",
     ],
-    source_code_link: "https://github.com/ValentinKRP/my-shop",
+    images: [
+      "/projects/nexus/2.png?v=20260326a",
+      "/projects/nexus/3.png",
+      "/projects/nexus/4.png",
+      "/projects/nexus/5.png",
+      "/projects/nexus/6.png",
+      "/projects/nexus/7.png",
+      "/projects/nexus/8.png",
+      "/projects/nexus/9.png",
+    ],
+    tags: [
+      { name: "Laravel 12", color: "blue-text-gradient" },
+      { name: "Next.js 16", color: "green-text-gradient" },
+      { name: "React 19", color: "pink-text-gradient" },
+      { name: "Filament", color: "blue-text-gradient" },
+      { name: "Docker", color: "green-text-gradient" },
+    ],
+    source_code_link: "",
   },
   {
-    name: "FitNutrition",
+    name: "CodeIgniter Marketplace",
     description:
-      "My degree project, a fitness mobile app to track your calorie to help you achieve your objective.I used Flutter framework and work with a REST API  to search for specific food that user want to search and add to his daily journal.",
-    tags: [
-      {
-        name: "Flutter",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "REST API",
-        color: "green-text-gradient",
-      },
+      "Marketplace application combining storefront, seller operations, checkout, messaging, and admin workflows in one system.",
+    role: "Full marketplace application and integrations",
+    stack: "CodeIgniter 4, PHP 8.3, Apache, MariaDB",
+    useCase: "Public marketplace plus seller workspace",
+    highlights: [
+      "Delivered public marketplace browsing, seller dashboards, carts, checkout flows, order lifecycles, and internal messaging.",
+      "Ran the application in Docker with Apache, Mailhog, Stripe-based payment flows, JWT usage, and external system bridges.",
+      "Worked in a hybrid architecture that combines CodeIgniter with Illuminate components and legacy-compatible runtime choices such as ionCube.",
+      "Supported seller inventory management, subscriptions, notifications, part requests, and company profile workflows in the same application.",
+      "Exposed integration-oriented APIs and sync flows for products, vehicles, users, returns, and webhook-driven business processes.",
     ],
-    image: gitproject,
+    images: [
+      "/projects/autozon/1.png",
+      "/projects/autozon/2.png",
+      "/projects/autozon/4.png",
+      "/projects/autozon/5.png",
+      "/projects/autozon/6.png",
+      "/projects/autozon/7.png",
+      "/projects/autozon/8.png",
+      "/projects/autozon/9.png",
+      "/projects/autozon/10.png",
+      "/projects/autozon/11.png",
+      "/projects/autozon/12.png",
+      "/projects/autozon/13.png",
+      "/projects/autozon/14.png",
+      "/projects/autozon/15.png",
+    ],
+    tags: [
+      { name: "CodeIgniter 4", color: "blue-text-gradient" },
+      { name: "PHP 8.3", color: "green-text-gradient" },
+      { name: "MariaDB", color: "pink-text-gradient" },
+      { name: "Stripe", color: "blue-text-gradient" },
+      { name: "Docker", color: "green-text-gradient" },
+    ],
+    source_code_link: "",
+  },
+  {
+    name: "PartsLinker Operations Platform",
+    description:
+      "Custom operations platform for dismantlers and used-parts sellers, centered on stock, donor vehicles, warehouse activity, order intake, and channel synchronization.",
+    role: "Multi-tenant seller and admin platform",
+    stack: "Custom PHP, Twig, MySQL / MariaDB, jQuery",
+    useCase: "Operations system for dismantlers",
+    highlights: [
+      "Built on a heavily customized OpenCart-style MVC core with server-rendered Twig templates and route-based permissions.",
+      "Delivered inventory, donor vehicle, warehouse label, imported order, invoice, subscription, support, and partner/mobile API workflows.",
+      "Worked across AI-assisted product drafting, background removal, feed exports, and a large codebase with hundreds of routes and templates.",
+      "Supported multi-tenant seller, employee, and admin contexts through operational dashboards and permission-based internal workspaces.",
+      "Integrated marketplace, courier, billing, search, and partner services so businesses can manage stock, sales, and fulfillment from one system.",
+    ],
+    images: [
+      "/projects/PL/1.png",
+      "/projects/PL/2.png",
+      "/projects/PL/3.png",
+      "/projects/PL/4.png",
+      "/projects/PL/5.png",
+      "/projects/PL/6.png",
+      "/projects/PL/7.png",
+      "/projects/PL/8.png",
+    ],
+    tags: [
+      { name: "Custom PHP", color: "blue-text-gradient" },
+      { name: "Twig", color: "green-text-gradient" },
+      { name: "MySQL", color: "pink-text-gradient" },
+      { name: "jQuery", color: "blue-text-gradient" },
+      { name: "OpenCart-style MVC", color: "green-text-gradient" },
+    ],
+    source_code_link: "",
+  },
+  {
+    name: "Fitness Calorie Tracking App",
+    description:
+      "Bachelor degree project built in Flutter to help users track calories, monitor daily activity, and follow personal fitness progress through a mobile interface.",
+    role: "Mobile app project",
+    stack: "Flutter",
+    useCase: "Calories and personal progress tracking",
+    highlights: [
+      "Built as a bachelor degree project focused on a mobile-first fitness experience.",
+      "Tracked calorie intake, daily activity, and personal progress in a simple journal-style flow.",
+      "Used a REST API to search foods and support day-to-day nutrition logging.",
+    ],
+    images: [
+      "/projects/fitness/1.png",
+      "/projects/fitness/2.png",
+      "/projects/fitness/3.png",
+      "/projects/fitness/4.png",
+      "/projects/fitness/5.png",
+      "/projects/fitness/6.png",
+      "/projects/fitness/7.png",
+    ],
+    tags: [
+      { name: "Flutter", color: "blue-text-gradient" },
+      { name: "Mobile App", color: "green-text-gradient" },
+      { name: "REST API", color: "pink-text-gradient" },
+    ],
     source_code_link: "https://github.com/ValentinKRP/FitNutritionLicenta",
   },
-
   {
-    name: "To Do List",
-    description: "A simple to do list app using React framework",
-    tags: [
-      {
-        name: "html/css",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "react",
-        color: "green-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: gitproject,
-    source_code_link: "https://github.com/ValentinKRP/react-to-do-list",
-  },
-  {
-    name: "Backend-Shop Laravel",
+    name: "Minimal Shop Application",
     description:
-      "A shop application focused on the backend functionality using Laravel",
-    tags: [
-      {
-        name: "html",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "css",
-        color: "green-text-gradient",
-      },
-      {
-        name: "php",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Laravel",
-        color: "pink-text-gradient",
-      },
+      "Personal learning project built with vanilla PHP and vanilla JavaScript, without frameworks, to strengthen core web development fundamentals through a small shop application.",
+    role: "Learning project",
+    stack: "Vanilla PHP, JavaScript, HTML, CSS",
+    useCase: "Core web development fundamentals",
+    highlights: [
+      "Built without frameworks to better understand routing, rendering, forms, and request handling at a lower level.",
+      "Used a minimalist shop concept to practice product display, user interactions, and basic application structure.",
+      "Served as an early project for strengthening core backend and frontend web development skills.",
     ],
-    image: gitproject,
-    source_code_link: "https://github.com/ValentinKRP/Laravel-shopApp-backend",
-  },
-  {
-    name: "Backend-Shop PHP",
-    description:
-      "A shop application focused on the backend functionality using only php",
+    images: [gitproject],
     tags: [
-      {
-        name: "html",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "css",
-        color: "green-text-gradient",
-      },
-      {
-        name: "php",
-        color: "pink-text-gradient",
-      },
+      { name: "Vanilla PHP", color: "blue-text-gradient" },
+      { name: "JavaScript", color: "green-text-gradient" },
+      { name: "HTML/CSS", color: "pink-text-gradient" },
     ],
-    image: gitproject,
     source_code_link: "https://github.com/ValentinKRP/PHP-shopApp-backend",
-  },
-  {
-    name: "Bike Service",
-    description:
-      "Web-based platform that allows users to appoint for a a problem with his bike in a service",
-    tags: [
-      {
-        name: "html",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "css",
-        color: "green-text-gradient",
-      },
-      {
-        name: "php",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: gitproject,
-    source_code_link: "https://github.com/ValentinKRP/TW",
-  },
-  {
-    name: "3D personal website",
-    description: "A portofolio using react 3d libraries",
-    tags: [
-      {
-        name: "html/css",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "react",
-        color: "green-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: gitproject,
-    source_code_link: "https://github.com/ValentinKRP/3D-portofoliu",
   },
 ];
 

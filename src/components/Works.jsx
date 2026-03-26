@@ -1,5 +1,4 @@
-import React from "react";
-import {Tilt} from "react-tilt";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -12,57 +11,134 @@ const ProjectCard = ({
   index,
   name,
   description,
+  role,
+  stack,
+  useCase,
+  highlights,
   tags,
-  image,
+  images,
   source_code_link,
 }) => {
-  return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
-      >
-        <div className='relative w-full h-[230px]'>
-          <img
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
-          />
+  const [activeIndex, setActiveIndex] = useState(0);
+  const hasGallery = images.length > 1;
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
+  const showSlide = (nextIndex) => {
+    setActiveIndex((nextIndex + images.length) % images.length);
+  };
+
+  return (
+    <motion.div variants={fadeIn("up", "spring", index * 0.18, 0.75)} className='w-full'>
+      <div className='w-full rounded-2xl bg-tertiary p-6 md:p-8'>
+        <div className='grid items-start gap-8 xl:grid-cols-[minmax(0,1fr)_430px]'>
+          <div>
+            <h3 className='text-[28px] font-bold text-white'>{name}</h3>
+            <p className='mt-3 text-[15px] leading-[28px] text-secondary'>{description}</p>
+
+            <div className='mt-6 grid gap-3 sm:grid-cols-3'>
+              <div className='rounded-2xl border border-white/10 bg-black/20 p-4'>
+                <p className='text-[12px] uppercase tracking-[0.18em] text-secondary'>Role</p>
+                <p className='mt-2 text-[15px] leading-6 text-white'>{role}</p>
+              </div>
+              <div className='rounded-2xl border border-white/10 bg-black/20 p-4'>
+                <p className='text-[12px] uppercase tracking-[0.18em] text-secondary'>Stack</p>
+                <p className='mt-2 text-[15px] leading-6 text-white'>{stack}</p>
+              </div>
+              <div className='rounded-2xl border border-white/10 bg-black/20 p-4'>
+                <p className='text-[12px] uppercase tracking-[0.18em] text-secondary'>Use Case</p>
+                <p className='mt-2 text-[15px] leading-6 text-white'>{useCase}</p>
+              </div>
             </div>
+
+            <ul className='mt-6 space-y-3'>
+              {highlights.map((highlight, highlightIndex) => (
+                <li
+                  key={`${name}-highlight-${highlightIndex}`}
+                  className='flex gap-3 text-[15px] leading-[27px] text-secondary'
+                >
+                  <span className='mt-[10px] h-2 w-2 shrink-0 rounded-full bg-[#915EFF]' />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className='mt-6 flex flex-wrap gap-2'>
+              {tags.map((tag) => (
+                <p
+                  key={`${name}-${tag.name}`}
+                  className={`text-[14px] ${tag.color}`}
+                >
+                  #{tag.name}
+                </p>
+              ))}
+            </div>
+
+            {source_code_link ? (
+              <button
+                type='button'
+                onClick={() => window.open(source_code_link, "_blank")}
+                className='mt-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-black/30 px-5 py-3 text-[14px] font-medium text-white transition hover:border-[#915EFF] hover:bg-black/50'
+              >
+                <img
+                  src={github}
+                  alt='source code'
+                  className='h-4 w-4 object-contain'
+                />
+                View repository
+              </button>
+            ) : null}
+          </div>
+
+          <div>
+            <div className='relative overflow-hidden rounded-2xl border border-white/10 bg-black/30'>
+              <img
+                src={images[activeIndex]}
+                alt={`${name} preview ${activeIndex + 1}`}
+                className='h-[300px] w-full bg-[#0b0f17] object-contain'
+              />
+
+              {hasGallery ? (
+                <>
+                  <button
+                    type='button'
+                    onClick={() => showSlide(activeIndex - 1)}
+                    className='absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/65 text-white'
+                  >
+                    &#8249;
+                  </button>
+                  <button
+                    type='button'
+                    onClick={() => showSlide(activeIndex + 1)}
+                    className='absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/65 text-white'
+                  >
+                    &#8250;
+                  </button>
+                </>
+              ) : null}
+            </div>
+
+            {hasGallery ? (
+              <div className='mt-3 grid grid-cols-4 gap-2 sm:grid-cols-5'>
+                {images.map((image, imageIndex) => (
+                  <button
+                    key={`${name}-thumb-${imageIndex}`}
+                    type='button'
+                    onClick={() => showSlide(imageIndex)}
+                    className={`overflow-hidden rounded-xl border ${
+                      imageIndex === activeIndex ? "border-[#915EFF]" : "border-white/10"
+                    } bg-black/30`}
+                  >
+                    <img
+                      src={image}
+                      alt={`${name} thumbnail ${imageIndex + 1}`}
+                      className='h-16 w-full bg-[#0b0f17] object-contain'
+                    />
+                  </button>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
-
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-        </div>
-
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
-        </div>
-      </Tilt>
+      </div>
     </motion.div>
   );
 };
@@ -71,20 +147,22 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={styles.sectionSubText}>Selected Work</p>
+        <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
 
       <div className='w-full flex'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+          className='mt-3 max-w-4xl text-[17px] leading-[30px] text-secondary'
         >
-          Below you can find some projects that i did untill now.
+          A selection of projects across marketplace operations, seller workflows, inventory tooling,
+          and personal product development. Each project is presented with screenshots, technical
+          context, and feature highlights.
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-14 flex flex-col gap-7'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
@@ -93,4 +171,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "projects");
