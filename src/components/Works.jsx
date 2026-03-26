@@ -28,23 +28,23 @@ const ProjectCard = ({
 
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.18, 0.75)} className='w-full'>
-      <div className='w-full rounded-2xl bg-tertiary p-6 md:p-8'>
+      <div className='w-full rounded-2xl border border-white/10 bg-[#0d1324] p-6 shadow-card md:p-8'>
         <div className='grid items-start gap-8 xl:grid-cols-[minmax(0,1fr)_430px]'>
           <div>
             <h3 className='text-[28px] font-bold text-white'>{name}</h3>
-            <p className='mt-3 text-[15px] leading-[28px] text-secondary'>{description}</p>
+            <p className='mt-3 text-[15px] leading-[28px] text-white/80'>{description}</p>
 
             <div className='mt-6 grid gap-3 sm:grid-cols-3'>
-              <div className='rounded-2xl border border-white/10 bg-black/20 p-4'>
-                <p className='text-[12px] uppercase tracking-[0.18em] text-secondary'>Role</p>
+              <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
+                <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Role</p>
                 <p className='mt-2 text-[15px] leading-6 text-white'>{role}</p>
               </div>
-              <div className='rounded-2xl border border-white/10 bg-black/20 p-4'>
-                <p className='text-[12px] uppercase tracking-[0.18em] text-secondary'>Stack</p>
+              <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
+                <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Stack</p>
                 <p className='mt-2 text-[15px] leading-6 text-white'>{stack}</p>
               </div>
-              <div className='rounded-2xl border border-white/10 bg-black/20 p-4'>
-                <p className='text-[12px] uppercase tracking-[0.18em] text-secondary'>Use Case</p>
+              <div className='rounded-2xl border border-white/10 bg-black/30 p-4'>
+                <p className='text-[12px] uppercase tracking-[0.18em] text-white/55'>Use Case</p>
                 <p className='mt-2 text-[15px] leading-6 text-white'>{useCase}</p>
               </div>
             </div>
@@ -53,7 +53,7 @@ const ProjectCard = ({
               {highlights.map((highlight, highlightIndex) => (
                 <li
                   key={`${name}-highlight-${highlightIndex}`}
-                  className='flex gap-3 text-[15px] leading-[27px] text-secondary'
+                  className='flex gap-3 text-[15px] leading-[27px] text-white/80'
                 >
                   <span className='mt-[10px] h-2 w-2 shrink-0 rounded-full bg-[#915EFF]' />
                   <span>{highlight}</span>
@@ -93,7 +93,7 @@ const ProjectCard = ({
               <img
                 src={images[activeIndex]}
                 alt={`${name} preview ${activeIndex + 1}`}
-                className='h-[300px] w-full bg-[#0b0f17] object-contain'
+                className='h-[300px] w-full bg-[#050816] object-contain'
               />
 
               {hasGallery ? (
@@ -125,12 +125,12 @@ const ProjectCard = ({
                     onClick={() => showSlide(imageIndex)}
                     className={`overflow-hidden rounded-xl border ${
                       imageIndex === activeIndex ? "border-[#915EFF]" : "border-white/10"
-                    } bg-black/30`}
+                    } bg-[#050816]`}
                   >
                     <img
                       src={image}
                       alt={`${name} thumbnail ${imageIndex + 1}`}
-                      className='h-16 w-full bg-[#0b0f17] object-contain'
+                      className='h-16 w-full bg-[#050816] object-contain'
                     />
                   </button>
                 ))}
@@ -154,7 +154,7 @@ const Works = () => {
       <div className='w-full flex'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 max-w-4xl text-[17px] leading-[30px] text-secondary'
+          className='mt-3 max-w-4xl text-[17px] leading-[30px] text-white/80'
         >
           A selection of projects across marketplace operations, seller workflows, inventory tooling,
           and personal product development. Each project is presented with screenshots, technical
